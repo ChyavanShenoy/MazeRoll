@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/CharacterScript.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -21,33 +24,6 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
 mesh = SubResource( 2 )
 
-[node name="Box2" type="RigidBody" parent="."]
-transform = Transform( 0.809079, -0.501242, 0.306837, 0.587701, 0.690052, -0.422417, 0, 0.522097, 0.852886, 0, 8.01294, 0 )
-
-[node name="BoxCollider" type="CollisionShape" parent="Box2"]
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Box2"]
-mesh = SubResource( 2 )
-
-[node name="Box3" type="RigidBody" parent="."]
-transform = Transform( 0.809079, -0.501242, 0.306837, 0.587701, 0.690052, -0.422417, 0, 0.522097, 0.852886, 0, 11.6947, 0 )
-
-[node name="BoxCollider" type="CollisionShape" parent="Box3"]
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Box3"]
-mesh = SubResource( 2 )
-
-[node name="Box4" type="RigidBody" parent="."]
-transform = Transform( 0.809079, -0.501242, 0.306837, 0.587701, 0.690052, -0.422417, 0, 0.522097, 0.852886, 0, 15.4491, 0 )
-
-[node name="BoxCollider" type="CollisionShape" parent="Box4"]
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Box4"]
-mesh = SubResource( 2 )
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.968283, 0.249856, 0, -0.249856, 0.968283, 0, 5.68222, 7.38559 )
 
@@ -59,3 +35,6 @@ shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 4 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 2 )
